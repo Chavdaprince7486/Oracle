@@ -1,0 +1,45 @@
+CREATE TABLE SALES_ORDER_35(
+  orderno VARCHAR2(6)PRIMARY KEY,
+  clientno VARCHAR2(6)REFERENCES CLIENT_MASTER_35,
+  orderdate DATE NOT NULL,
+  delyaddr VARCHAR2(20),
+  salesmanno VARCHAR2(6) REFERENCES SALESMAN_MASTER_35,
+  delytype CHAR(1),
+  billyn CHAR(1),
+  delydate DATE,
+  orderstatus VARCHAR2(10),
+  CONSTRAINT chk_orderno_35 CHECK (orderno LIKE 'O%'),
+  CONSTRAINT chk_delytype_35 CHECK (delytype IN ('p', 'f')),
+  CONSTRAINT chk_delydate_35 CHECK (delydate > orderdate),
+  CONSTRAINT chk_orderstatus_35 CHECK
+  (orderstatus IN ('in process', 'fulfilled', 'backorder', 'cancelled'))
+);
+
+modify the data type
+
+ALTER TABLE SALES_ORDER_35
+MODIFY (
+    ORDERNO VARCHAR2(6)NOT NULL,
+    CLIENTNO VARCHAR2(6),
+    ORDERDATE DATE NOT NULL,
+    DELYADDR VARCHAR2(20),
+    SALESMANNO VARCHAR2(6),
+    DELYTYPE CHAR(3),
+    BILLYN CHAR(1),
+    DELYDATE DATE,
+    ORDERSTATUS VARCHAR2(10)
+);
+
+
+insert data in the table
+
+
+insert into Sales_Order_35 values ('O19001','C00001','12-June-04','S00001','f','N','20-July-04','in process');
+
+insert into Sales_Order_35 values ('O19002','C00002','25-June-04','','S00002','p','N','27-June-04','cancelled');
+
+insert into Sales_Order_35 values ('O19003','C00004',' 03-Apr-04','','S00001','f','Y','07-Apr-04 ','fulfilled');
+
+insert into Sales_Order_35 values ('O46866','C00005','20-May-04 ','','S00002','p','N','22-May-04','cancelled');
+
+insert into Sales_Order_35 values ('O19008','C00006','24-May-04 ','','S00004','f','N','26-July-04','fulfilled');

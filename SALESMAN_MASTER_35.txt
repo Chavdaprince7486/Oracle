@@ -1,0 +1,31 @@
+CREATE TABLE SALESMAN_MASTER_35(
+ salesmanno VARCHAR2(6)PRIMARY KEY,
+ salesmanname VARCHAR2(15)NOT NULL,
+ address1 VARCHAR2(10)NOT NULL,
+ address2 VARCHAR(10),
+ city VARCHAR2(10),
+ pincode NUMBER(6),
+ state VARCHAR2(12),
+ salamt NUMBER(8,2)NOT NULL,
+ tgttoget NUMBER(6,2)NOT NULL,
+ ytdsales NUMBER(6,2)NOT NULL,
+ remarks VARCHAR2(10),
+ constraint chk_salesmanno_35 CHECK (salesmanno LIKE 'S%'),
+ constraint chk_salamat_35 CHECK (salamt!=0),
+ constraint chk_tgttoget_35 CHECK (tgttoget!=0),
+ constraint chk_ytdsales_35 CHECK (ytdsales!=0)
+);
+
+Insert the data types
+
+INSERT INTO SALESMAN_MASTER_35 VALUES
+('S00001', 'Aman', 'A/14', 'Worli', 'Mumbai', 400002, 'Maharashtra', 3000, 100, 50, 'Good');
+
+INSERT INTO SALESMAN_MASTER_35 VALUES
+('S00002', 'Omkar', '65', 'Nariman', 'Mumbai', 400001, 'Maharashtra', 3000, 200, 100, 'Good');
+
+INSERT INTO SALESMAN_MASTER_35 VALUES
+('S00003', 'Raj', 'P-7', 'Bandra', 'Mumbai', 400032, 'Maharashtra', 3000, 200, 100, 'Good');
+
+INSERT INTO SALESMAN_MASTER_35 VALUES
+('S00004', 'Ashish', 'A/5', 'Juhu', 'Mumbai', 400044, 'Maharashtra', 3000, 200, 100, 'Good');

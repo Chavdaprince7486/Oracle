@@ -1,0 +1,39 @@
+TABLE1 CLIENT_MASTER_35
+
+--------------------------------------
+--------------------------------------
+
+create table CLIENT_MASTER_35(
+ clientno varchar(6)primary key,
+ name varchar(15)not null,
+ address1 varchar(15),
+ address2 varchar(15),
+ city varchar(15),
+ pincode number(6),
+ state varchar(15),
+ baldue number(10,2),
+constraint chk_client_35 check(clientno like'C%')
+);
+
+INSERT INTO DATA IN TABLE1
+
+insert into CLIENT_MASTER_35 values('C00001','Rakesh Joshi','','','Mumbai',400054,'Maharashtra','15000');
+
+insert into CLIENT_MASTER_35 values('C00002','Mayur Patel','','','Madras',780001,'Tamilnadu','0');
+
+insert into CLIENT_MASTER_35 values('C00003','Ishita Mehta','','','Mumbai',400057,'Maharashtra','5000');
+
+insert into CLIENT_MASTER_35 values('C00004','Amit Solanki','','','Bangalore',560001,'Karnataka','0');
+
+insert into CLIENT_MASTER_35 values('C00005','Hiren Pandya','','','Mumbai',400060,'Maharashtra','2000');
+
+insert into CLIENT_MASTER_35 values('C00006','Dipak Sharma','','','Mangalore',560050,'Karnataka','0');
+
+
+MODIFY THE DATATYPES
+
+alter table CLIENT_MASTER_35 modify(clientno varchar2(6),not null,);
+
+alter table CLIENT_MASTER_35 modify(not null,clientno varchar2(6)not null);
+
+alter table CLIENT_MASTER_35 modify(not null clientno varchar2(6)not null);
