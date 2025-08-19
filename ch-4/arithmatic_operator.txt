@@ -1,0 +1,12 @@
+declare
+   x number(5):=30;
+   y number(5):=15;
+    
+begin
+
+   dbms_output.put_line(x+y);
+   dbms_output.put_line(x-y);
+   dbms_output.put_line(x*y);
+   dbms_output.put_line(x/y);
+
+end;

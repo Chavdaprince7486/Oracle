@@ -1,0 +1,12 @@
+declare
+  a number(3);
+begin
+  a:=10;
+
+  if(a<2)then
+   dbms_output.put_line('a is smaller');
+  else
+   dbms_output.put_line('a is bigger');
+  end if;
+end;
+/

@@ -1,0 +1,7 @@
+declare
+   collage_name constant varchar2(20):='SYBCA';
+
+begin
+   dbms_output.put_line('I Study In '|| collage_name);
+
+end;
